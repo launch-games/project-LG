@@ -83,6 +83,13 @@ services:
       - frontend_network
     depends_on:
       - web-front
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
+    networks:
+      - backend_network
 
 networks:
   backend_network:
